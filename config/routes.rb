@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  
   get "elements/form"
   get "elements/sum"
-  #get "elements/index"
   resources :elements
   
   
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   #resources :welcome
   get 'welcome/index'
   get "welcome/sum"
-  root 'welcome#index'
+  #root 'welcome#index'
+  root "elements#form"
 
 
   # Example of regular route:

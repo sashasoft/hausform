@@ -1,7 +1,7 @@
 
 <h1>Форма подсчета стоимости проекта.</h1><br><br>
 
-<%= form_tag("sum", method: :get) do %>
+<%= form_tag("elements/sum", method: :get) do %>
   Архитектурный проект <%= check_box_tag 'archproject' %><br><br>
   <span class="caption">Фундамент</span><br>
   Площадь <%= number_field_tag 'plfund' %> м<sup>2</sup><br><br>
@@ -43,10 +43,11 @@
   Окна, площадь <%= number_field_tag 'plokna'%> м<sup>2</sup><br>
   <br>
   
-  <span class="caption">Маркетинговая наценка</span> <%= check_box_tag 'marketing' %><br>
+  
   <span class="caption">Логистика наценка</span> <%= check_box_tag 'logistika' %><br>
   <span class="caption">Акционная наценка</span> <%= check_box_tag 'akcionka' %><br>
-  <span class="caption">Прибыльная наценка</span> <%= check_box_tag 'pribyl' %><br><br>
+  <span class="caption">Прибыльная наценка</span> <%= check_box_tag 'pribyl' %><br>
+  <span class="caption">Маркетинговая наценка</span> <%= check_box_tag 'marketing' %><br><br>
   
   
   
