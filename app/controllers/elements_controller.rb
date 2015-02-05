@@ -132,18 +132,26 @@ class ElementsController < ApplicationController
       @el = Element.find_by_name("Площадь окон")
       @sum = @sum.to_f + @el.price.to_f * params[:plokna].to_f
     end
-    if !(@sum == 0)
+    
+    #Дополнительные надбавки
+    if params[:marketing]
       @el = Element.find_by_name("Маркетинговая наценка")
       @sum = @sum.to_f + @el.price.to_f
+    end
+    if params[:logistika]
       @el = Element.find_by_name("Логистика наценка")
-      @sum = @sum.to_f * @el.price.to_f
-      @el = Element.find_by_name("Акционная наценка")
-      @sum = @sum.to_f + @el.price.to_f
-      @el = Element.find_by_name("Прибыльная наценка")
       @sum = @sum.to_f * @el.price.to_f
     end
     
-
+    if params[:akcionka]
+      @el = Element.find_by_name("Акционная наценка")
+      @sum = @sum.to_f + @el.price.to_f
+    end
+    if params[:pribyl]
+      @el = Element.find_by_name("Прибыльная наценка")
+      @sum = @sum.to_f * @el.price.to_f
+    end
+      
   end
       
   
