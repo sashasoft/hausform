@@ -1,0 +1,48 @@
+
+<h1>Форма подсчета стоимости проекта.</h1><br><br>
+
+<%= form_tag("sum", method: :get) do %>
+  Архитектурный проект <%= check_box_tag 'archproject' %><br><br>
+  <span class="caption">Фундамент</span><br>
+  Площадь <%= number_field_tag 'plfund' %> м<sup>2</sup><br><br>
+  
+  <span class="caption">Тип стен</span><br>
+  Площадь <%= number_field_tag 'plsten' %> м<sup>2</sup><br>
+  СИП160 <%= check_box_tag 'sip160' %>, Каркас150 <%= check_box_tag 'karkas150' %><br>
+  Наружная отделка: Сайдинг <%= check_box_tag 'saiding' %>, БлокХаус <%= check_box_tag 'blockhaus' %>, Штукатурка <%= check_box_tag 'shtukat' %><br>
+  Внутренняя отделка: Вагонка <%= check_box_tag 'vagonka' %>, Гипсокартон <%= check_box_tag 'gips' %><br>
+  Утепление <%= check_box_tag 'uteplenie' %> (только при каркасном типе стен!!!)<br><br>
+  
+  <span class="caption">Внутренние перегородки</span><br>
+  Площадь <%= number_field_tag 'plvnper'%> м<sup>2</sup><br>
+  Тип стен: СИП120 <%= check_box_tag 'sip120' %>, Каркас90 <%= check_box_tag 'karkas90' %><br>
+  Отделка: Вагонка <%= check_box_tag 'vagonka' %>, Гипсокартон <%= check_box_tag 'gips' %><br>
+  Утепление <%= check_box_tag 'utiplenie100' %> (только при каркасном типе стен!!!)<br><br>
+  
+  <div><span class="caption">Потолки</span><br>
+  Площадь <%= number_field_tag 'plpot' %> м<sup>2</sup><br>
+  Отделка потолка: Вагонка <%= check_box_tag 'vagonkapot' %>, Гипсокартон <%= check_box_tag 'gipspot' %>
+  </div><br><br>
+  
+  <span class="caption">Перекрытие</span><br>
+  Площадь <%= number_field_tag 'plper' %> м<sup>2</sup><br>
+  Утепление <%= check_box_tag 'utiplenieper' %><br><br>
+  
+  <span class="caption">Кровля</span><br>
+  Площадь <%= number_field_tag 'plkrov' %> м<sup>2</sup><br>
+  Тип кровли: Битумная <%= check_box_tag 'bitumkrov' %>, Металлочерепица <%= check_box_tag 'metkrov' %><br>
+  Утепление <%= check_box_tag 'utipleniekrov' %><br><br>
+  
+  <span class="caption">Инженерия</span><br>
+  Электрика <%= number_field_tag 'elektrik' %>  комплектов<br>
+  Водопровод <%= number_field_tag 'vodoprovod' %>  комплектов<br>
+  Канализация <%= number_field_tag 'kanalis' %>  комплектов<br><br>
+  
+  <span class="caption">Проемы</span><br>
+  Входная дверь <%= number_field_tag 'dver' %>  штук<br>
+  Окна, площадь <%= number_field_tag 'plokna'%> м<sup>2</sup><br>
+  <br>
+  <%= submit_tag "Подсчитать стоимость" %>
+<% end %>
+
+<%= link_to 'Перейти в раздел редактирования', elements_path %>

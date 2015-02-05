@@ -1,0 +1,14 @@
+Новый елемент проекта
+<%= form_for @element do |f| %>
+ 
+  <p>
+    Название<%= f.text_field :name %>
+  </p>
+ 
+ <p>
+    Цена:<%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,15 @@
+Изменение елемента
+
+<%= form_for @element do |f| %>
+ 
+  <p>
+    <strong><%= @element.name %></strong>
+  </p>
+ 
+ <p>
+    Цена:<%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

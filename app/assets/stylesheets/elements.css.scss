@@ -1,0 +1,23 @@
+// Place all the styles related to the elements controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+table {
+  border-collapse: collapse
+}
+th { 
+  text-align: left; /* Выравнивание по левому краю */
+  background: #ccc; /* Цвет фона ячеек */
+  padding: 5px; /* Поля вокруг содержимого ячеек */
+  border: 1px solid black; /* Граница вокруг ячеек */
+ }
+ td { 
+  padding: 5px; /* Поля вокруг содержимого ячеек */
+  border: 1px solid black; /* Граница вокруг ячеек */
+ }
+ span {
+   color: red;
+ }
+ 
