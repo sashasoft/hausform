@@ -1,5 +1,6 @@
 class ElementsController < ApplicationController
   #load_and_authorize_resource
+  #encoding: utf-8
   before_filter :authenticate_user!, :except => [:form, :sum]
   
   def index
