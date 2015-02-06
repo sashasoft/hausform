@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     resources :component
   end
   #resources :welcome
-  get 'welcome/index'
-  get "welcome/sum"
-  #root 'welcome#index'
-  root "elements#form"
+  #get 'welcome/index'
+  #get "welcome/sum"
+  root 'welcome#index'
+  #root "elements#form"
 
 
   # Example of regular route:

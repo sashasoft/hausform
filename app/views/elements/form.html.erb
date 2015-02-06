@@ -1,7 +1,7 @@
 
 <h1>Форма подсчета стоимости проекта.</h1><br><br>
 
-<%= form_tag("elements/sum", method: :get) do %>
+<%= form_tag("sum", method: :get) do %>
   Архитектурный проект <%= check_box_tag 'archproject' %><br><br>
   <span class="caption">Фундамент</span><br>
   Площадь <%= number_field_tag 'plfund' %> м<sup>2</sup><br><br>
@@ -54,4 +54,4 @@
   <%= submit_tag "Подсчитать стоимость" %><br>
 <% end %>
 <br>
-<%= link_to 'Перейти в раздел редактирования', elements_path %>
+  <%= link_to 'Перейти в раздел редактирования', elements_path %>
