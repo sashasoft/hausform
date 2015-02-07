@@ -1,6 +1,5 @@
-#encoding: utf-8
 class ElementsController < ApplicationController
-  #load_and_authorize_resource
+  
   
   before_filter :authenticate_user!, :except => [:form, :sum]
   
@@ -52,7 +51,7 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + @el.price.to_f * params[:plsten].to_f
       end
     end
-    #Внутренние перегородки
+    
     if params[:plvnper]
       if params[:sip120]
         @el = Element.find_by_label("sip120")
@@ -76,7 +75,7 @@ class ElementsController < ApplicationController
       end
     end
     
-    #Потолок
+    
     if params[:plpot]
       if params[:vagonkapot]
         @el = Element.find_by_label("vagonkapot")
@@ -88,7 +87,7 @@ class ElementsController < ApplicationController
       end
     end
     
-    #Перекрытие
+    
     if params[:plper]
         @el = Element.find_by_label("perkosb")
         @sum = @sum.to_f + @el.price.to_f * params[:plper].to_f
@@ -98,7 +97,7 @@ class ElementsController < ApplicationController
       end
     end
     
-    #Кровля
+    
     if params[:plkrov]
       if params[:bitumkrov]
         @el = Element.find_by_label("bitumkrov")
@@ -114,7 +113,7 @@ class ElementsController < ApplicationController
       end
     end
     
-    #Инженерия
+
     if params[:elektrik]
       @el = Element.find_by_label("elektrik")
       @sum = @sum.to_f + @el.price.to_f * params[:elektrik].to_f
@@ -128,7 +127,7 @@ class ElementsController < ApplicationController
       @sum = @sum.to_f + @el.price.to_f * params[:kanalis].to_f
     end
     
-    #Проемы
+    
     if params[:dver]
       @el = Element.find_by_label("dver")
       @sum = @sum.to_f + @el.price.to_f * params[:dver].to_f
@@ -138,7 +137,7 @@ class ElementsController < ApplicationController
       @sum = @sum.to_f + @el.price.to_f * params[:plokna].to_f
     end
     
-    #Дополнительные надбавки
+    
     if params[:marketing]
       @el = Element.find_by_label("marketing")
       @sum = @sum.to_f + @el.price.to_f
