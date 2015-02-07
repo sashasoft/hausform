@@ -207,7 +207,7 @@ class ElementsController < ApplicationController
   
   private
     def element_params
-      params.require(:element).permit(:name, :price)
+      params.require(:element).permit(:name, :price, :label)
     end
     
   
