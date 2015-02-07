@@ -10,6 +10,7 @@
     <tr>
       <td><%= element.name %></td>
       <td><%= element.price %> </td>
+      <td><%= link_to 'Смотреть', element %></td> 
       <td><%= link_to 'Редактировать цену', edit_element_path(element) %></td>     
       <td><%= link_to 'Удалить', element_path(element),
               method: :delete,
