@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "elements/form"
   get "elements/sum"
   resources :elements
-  
+  root 'welcome#index'
   
   devise_for :users
   resources :form do
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #resources :welcome
   #get 'welcome/index'
   #get "welcome/sum"
-  root 'welcome#index'
+  
   #root "elements#form"
 
 
