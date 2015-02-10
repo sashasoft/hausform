@@ -142,6 +142,42 @@ class ElementsController < ApplicationController
       end
     end
     
+    #inzheneria
+    if params[:elektrik]
+      @sum = @sum.to_f + Element.find_by(label: :elektrik).price.to_f
+    end
+    if params[:vodoprovod]
+       @sum = @sum.to_f + Element.find_by(label: :vodoprovod).price.to_f
+    end
+    if params[:kanalis]
+       @sum = @sum.to_f + Element.find_by(label: :kanalis).price.to_f
+    end
+    
+    #dver
+    if params[:dver]
+      @sum = @sum.to_f + Element.find_by(label: :dver).price.to_f
+    end
+    if params[:plokna]
+      @sum = @sum.to_f + Element.find_by(label: :plokna).price.to_f * params[:plokna].to_f
+    end
+    
+    #marketing
+    if !(@sum == 0)
+      if params[:marketing]
+        @sum = @sum.to_f + Element.find_by(label: :marketing).price.to_f
+      end
+      if params[:logistika]
+        @sum = @sum.to_f * Element.find_by(label: :logistika).price.to_f
+      end
+      
+      if params[:akcionka]
+        @sum = @sum.to_f + Element.find_by(label: :akcionka).price.to_f
+      end
+      if params[:pribyl]
+         @sum = @sum.to_f * Element.find_by(label: :pribyl).price.to_f
+      end
+    end
+    
     
   end
   
