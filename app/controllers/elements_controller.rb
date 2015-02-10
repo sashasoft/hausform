@@ -109,7 +109,40 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f
       end
     end
+    
+    #potolok
+    if params[:plpot]
+      if params[:vagonkapot]
+        @sum = @sum.to_f + Element.find_by(label: :vagonkapot).price.to_f * params[:plpot].to_f
+      end
+      if params[:gipspot]
+        @sum = @sum.to_f + Element.find_by(label: :gipspot).price.to_f * params[:plpot].to_f
+      end
+    end
            
+           
+    #perekrytie
+    if params[:plper]
+        @sum = @sum.to_f + Element.find_by(label: :perkosb).price.to_f * params[:plper].to_f
+      if params[:utiplenieper]
+        @sum = @sum.to_f + Element.find_by(label: :utiplenieper).price.to_f * params[:plper].to_f
+      end
+    end
+    
+    #frovlia
+    if params[:plkrov]
+      if params[:bitumkrov]
+        @sum = @sum.to_f + Element.find_by(label: :bitumkrov).price.to_f * params[:plkrov].to_f
+      end
+      if params[:metkrov]
+        @sum = @sum.to_f + Element.find_by(label: :metkrov).price.to_f * params[:plkrov].to_f
+      end
+      if params[:utipleniekrov]
+        @sum = @sum.to_f + Element.find_by(label: :utipleniekrov).price.to_f * params[:plkrov].to_f
+      end
+    end
+    
+    
   end
   
   
