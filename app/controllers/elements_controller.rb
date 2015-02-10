@@ -123,7 +123,7 @@ class ElementsController < ApplicationController
            
     #perekrytie
     if params[:plper]
-        @sum = @sum.to_f + Element.find_by(label: :perkosb).price.to_f * params[:plper].to_f
+        @sum = @sum.to_f + Element.find_by(label: :perekosb).price.to_f * params[:plper].to_f
       if params[:utiplenieper]
         @sum = @sum.to_f + Element.find_by(label: :utiplenieper).price.to_f * params[:plper].to_f
       end
