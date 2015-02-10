@@ -63,7 +63,7 @@ class ElementsController < ApplicationController
       @sum = @sum.to_f + Element.find_by(label: :plfund).price.to_f * params[:plfund].to_f
     end 
     
-    
+    #steny
     if params[:plsten]
       if params[:sip160]
        @sum = @sum.to_f + Element.find_by(label: :sip160).price.to_f * params[:plsten].to_f
@@ -88,6 +88,25 @@ class ElementsController < ApplicationController
       end
       if params[:utiplenie]
        @sum = @sum.to_f + Element.find_by(label: :utiplenie).price.to_f * params[:plsten].to_f
+      end
+    end
+    
+    #vnutren peregorodki
+    if params[:plvnper]
+      if params[:sip120]
+        @sum = @sum.to_f + Element.find_by(label: :sip120).price.to_f * params[:plvnper].to_f
+      end
+      if params[:karkas90]
+        @sum = @sum.to_f + Element.find_by(label: :karkas90).price.to_f * params[:plvnper].to_f
+      end
+      if params[:vagonka]
+        @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f
+      end
+      if params[:gips]
+        @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f
+      end
+      if params[:utiplenie100]
+        @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f
       end
     end
            
