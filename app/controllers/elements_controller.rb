@@ -53,13 +53,14 @@ class ElementsController < ApplicationController
   def form
     @a
   end
+  
   def sum
     @sum = 0;
     if params[:archproject]
       @sum = @sum.to_f + Element.find_by(label: :archproject).price.to_f
     end
     if params[:plfund]
-      @sum = @sum.to_f + Element.find_by_label(label: :plfund).price.to_f * params[:plfund].to_f
+      @sum = @sum.to_f + Element.find_by(label: :plfund).price.to_f * params[:plfund].to_f
     end 
            
   end
