@@ -53,7 +53,7 @@ class ElementsController < ApplicationController
   def form
     @a
   end
-  
+  ##@sum = @sum.to_f + Element.find_by(label: :).price.to_f * params[:].to_f
   def sum
     @sum = 0;
     if params[:archproject]
@@ -62,11 +62,40 @@ class ElementsController < ApplicationController
     if params[:plfund]
       @sum = @sum.to_f + Element.find_by(label: :plfund).price.to_f * params[:plfund].to_f
     end 
+    
+    
+    if params[:plsten]
+      if params[:sip160]
+       @sum = @sum.to_f + Element.find_by(label: :sip160).price.to_f * params[:plsten].to_f
+      end
+      if params[:karkas150]
+        @sum = @sum.to_f + Element.find_by(label: :karkas150).price.to_f * params[:plsten].to_f
+      end
+      if params[:saiding]
+        @sum = @sum.to_f + Element.find_by(label: :saiding).price.to_f * params[:plsten].to_f
+      end
+      if params[:blockhaus]
+         @sum = @sum.to_f + Element.find_by(label: :blockhaus).price.to_f * params[:plsten].to_f
+      end
+      if params[:shtukat]
+        @sum = @sum.to_f + Element.find_by(label: :shtukat).price.to_f * params[:plsten].to_f
+      end
+      if params[:vagonka]
+        @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plsten].to_f
+      end
+      if params[:gips]
+         @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plsten].to_f
+      end
+      if params[:utiplenie]
+       @sum = @sum.to_f + Element.find_by(label: :utiplenie).price.to_f * params[:plsten].to_f
+      end
+    end
            
   end
   
   
   private
+  
     def element_params
       params.require(:element).permit(:name, :price, :label)
     end
