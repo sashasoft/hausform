@@ -2,25 +2,22 @@ class ElementsController < ApplicationController
   
   
   before_filter :authenticate_user!, :except => [:form, :sum]
+  load_and_authorize_resource
   
   def index
     @elements = Element.all
   end
-  
-  
-      
-  
   
   def new
     @element = Element.new
   end
   
   def show
-    @element = Element.find(params[:id])
+    #@element = Element.find(params[:id])
   end
   
   def edit
-    @element = Element.find(params[:id])
+    #@element = Element.find(params[:id])
   end
   
   def create
@@ -34,7 +31,7 @@ class ElementsController < ApplicationController
   end
     
   def update
-    @element = Element.find(params[:id])
+    #@element = Element.find(params[:id])
     
     if @element.update(element_params)
       redirect_to elements_path
@@ -84,7 +81,7 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plsten].to_f
       end
       if params[:gips]
-         @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plsten].to_f
+         @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plsten].to_f * 2.0
       end
       if params[:utiplenie]
        @sum = @sum.to_f + Element.find_by(label: :utiplenie).price.to_f * params[:plsten].to_f
@@ -103,7 +100,7 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f
       end
       if params[:gips]
-        @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f
+        @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f * 2.0
       end
       if params[:utiplenie100]
         @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f

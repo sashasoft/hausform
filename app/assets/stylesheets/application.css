@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .mycontent {
+  margin:0 auto;
+  border: solid 1px black;
+  padding-left: 30px;
+  background: #eee9e9;
+  width: 800px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+ }
+ .mydevise {
+   padding-top: 10px;
+   margin:0 auto;
+   background:#ffd700;
+   border: solid 1px black;
+   width: 830px;
+   padding-bottom: 10px;
+   text-align: right
+ }

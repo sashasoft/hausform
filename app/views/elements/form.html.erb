@@ -54,4 +54,8 @@
   <%= submit_tag "Sum" %><br>
 <% end %>
 <br>
+
+<% if can? :update, Element %>
   <%= link_to 'Перейти в раздел редактирования', elements_path %>
+<% end %>
+  
