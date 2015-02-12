@@ -97,7 +97,7 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + Element.find_by(label: :karkas90).price.to_f * params[:plvnper].to_f
       end
       if params[:vagonka]
-        @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f
+        @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f * 2
       end
       if params[:gips]
         @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f
@@ -126,7 +126,7 @@ class ElementsController < ApplicationController
       end
     end
     
-    #frovlia
+    #krovlia
     if params[:plkrov]
       if params[:bitumkrov]
         @sum = @sum.to_f + Element.find_by(label: :bitumkrov).price.to_f * params[:plkrov].to_f
