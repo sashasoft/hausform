@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+body {
+  font: 11pt sans-serif;
+}
 
 table {
   border-collapse: collapse
@@ -25,7 +27,7 @@ th {
   border: solid 1px black;
   padding-left: 30px;
   background: #eee9e9;
-  width: 800px;
+  width: 785px;
   padding-bottom: 20px;
   padding-top: 10px;
  }
@@ -34,8 +36,14 @@ th {
    margin:0 auto;
    background:#ffd700;
    border: solid 1px black;
-   width: 830px;
+   width: 815px;
    padding-bottom: 10px;
    text-align: right;
  }
- 
+ A {
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+   } 
+   A:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: red; /* Ссылка красного цвета */
+   } 

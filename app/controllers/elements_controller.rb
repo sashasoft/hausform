@@ -81,7 +81,7 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plsten].to_f
       end
       if params[:gips]
-         @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plsten].to_f * 2.0
+         @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plsten].to_f
       end
       if params[:utiplenie]
        @sum = @sum.to_f + Element.find_by(label: :utiplenie).price.to_f * params[:plsten].to_f
@@ -100,7 +100,7 @@ class ElementsController < ApplicationController
         @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f
       end
       if params[:gips]
-        @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f * 2.0
+        @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f
       end
       if params[:utiplenie100]
         @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f

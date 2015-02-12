@@ -1,4 +1,5 @@
 <br>
-<br>
 <%= link_to 'Форма подсчета стоимости проекта', elements_form_path %><br>
-<%= link_to 'Редактирование данных', elements_path %>
+<% if can? :update, Element %>
+  <%= link_to 'Перейти в раздел редактирования', elements_path %>
+<% end %>

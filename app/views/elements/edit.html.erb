@@ -1,5 +1,3 @@
-Изменение елемента
-
 <%= form_for @element do |f| %>
  
   <p>
@@ -10,6 +8,6 @@
     Цена:<%= f.text_field :price %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= submit_tag "Сохранить" %>
   </p>
 <% end %>

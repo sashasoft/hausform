@@ -2,7 +2,7 @@
 <%= form_for @element do |f| %>
  
   <p>
-    Название<%= f.text_field :name %>
+    Название:<%= f.text_field :name %>
   </p>
  
   <p>
@@ -15,5 +15,6 @@
   
   <p>
     <%= f.submit %>
+    <%= submit_tag "Создать" %>
   </p>
 <% end %>
