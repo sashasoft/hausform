@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* line 5, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+body {
+  font: 11pt sans-serif;
+}
+
+/* line 9, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+table {
+  border-collapse: collapse;
+}
+
+/* line 12, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+th {
+  text-align: left;
+  background: #ccc;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* line 18, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* line 22, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+span {
+  color: red;
+}
+
+/* line 25, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+.mycontent {
+  margin: 0 auto;
+  border: solid 1px black;
+  padding-left: 30px;
+  background: #eee9e9;
+  width: 785px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+/* line 34, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+.mydevise {
+  padding-top: 10px;
+  margin: 0 auto;
+  background: #ffd700;
+  border: solid 1px black;
+  width: 815px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+/* line 43, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+A {
+  text-decoration: none;
+  /* Убирает подчеркивание для ссылок */
+}
+
+/* line 46, /home/sashasoft/rubyprojects/hausform/app/assets/stylesheets/elements.css.scss */
+A:hover {
+  text-decoration: underline;
+  /* Добавляем подчеркивание при наведении курсора на ссылку */
+  color: red;
+  /* Ссылка красного цвета */
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
