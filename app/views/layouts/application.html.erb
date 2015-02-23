@@ -7,19 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="navbar-inner">
+        <div class="container">
+        <ul class="nav  navbar-nav pull-left">
+            <% if can? :update, Element %>
+              <li class="nav  navbar-nav pull-left"><%= link_to 'Раздел редактирования', elements_path %></li>
+            <% end %>
+            <li><%= link_to 'Форма подсчета', elements_form_path %></li>
+          </ul>
+        
+        
+        
+        
+        
+          <ul class="nav  navbar-nav pull-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "#{current_user.email}", '#' %></li>
+              <li><%= link_to 'Изменить пароль', edit_user_registration_path %></li>
+              <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Войти', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </header>
 
-<div class="mydevise">
-  <% if user_signed_in? %>| 
-    <%= current_user.email %> | 
-    <%= link_to 'Изменить пароль', edit_user_registration_path %> | 
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %> |
-<% else %>
-    | <%= link_to 'Войти', new_user_session_path %> |
-<% end %>
-</div>
-<div class="mycontent">
+
+
+<div class="container">
+  <div class="mycontent">
+  
+  </div>
   <%= yield %>
 </div>
+
 
 </body>
 </html>

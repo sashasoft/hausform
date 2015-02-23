@@ -1,9 +1,12 @@
 <h1>Все составляющие проекта строительства</h1>
  
-<table>
+<table class="table table-striped table-hover">
   <tr>
     <th><strong>Название</strong></th>
     <th>Цена за м<sup>2</sup> или %</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
  
   <% @elements.each do |element| %>
@@ -11,13 +14,13 @@
       <td><%= element.name %></td>
       <td><%= element.price %> </td>
       <% if can? :read, Element %>
-       <td><%= link_to 'Смотреть', element %></td> 
+       <td><%= link_to 'Подробно..', element, class: "btn btn-xs btn-info" %></td> 
       <% end %>
       <% if can? :update, Element %>
-         <td><%= link_to 'Редактировать цену', edit_element_path(element) %></td>
+         <td><%= link_to 'Редактировать цену', edit_element_path(element), class: "btn btn-xs btn-warning" %></td>
       <% end %>
       <% if can? :destroy, Element %>
-         <td><%= link_to 'Удалить', element_path(element),
+         <td><%= link_to 'Удалить!', element_path(element), class: "btn btn-xs btn-danger", 
             method: :delete,
             data: { confirm: 'Вы уверены?' } %></td> 
       <% end %>
@@ -28,5 +31,8 @@
   <% end %>
 </table>
 <br>
-<%= link_to 'Добавить новый елемент проекта', new_element_path %><br>
-<%= link_to 'Перейти к форме', elements_form_path %>
+<%= link_to 'Добавить новый елемент проекта', new_element_path, class: "btn btn-sm btn-success" %>
+<%= link_to 'Перейти к форме', elements_form_path, class: "btn btn-xs btn-primary" %>
+<br>
+<br>
+<br>
