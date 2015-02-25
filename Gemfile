@@ -40,3 +40,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'devise', '~> 3.4.1'
 gem 'cancancan', '~> 1.10'
 gem 'rolify', '~> 3.5.2'
+
+
+gem "spreadsheet"
+gem "to_xls", :git => "https://github.com/dblock/to_xls.git", :branch => "to-xls-on-models"

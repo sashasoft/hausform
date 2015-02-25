@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'components/index'
+
   get "elements/form"
   get "elements/sum"
   resources :elements
