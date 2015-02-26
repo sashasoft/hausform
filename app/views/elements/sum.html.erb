@@ -1,4 +1,5 @@
-<br>Стоимость проекта: <%= @sum %> грн.<br>
+<br>Стоимость проекта: <%= @sum %> грн. <br>
+Всего <%= @hh.length %> позиции.
 <%= link_to "Excel", elements_sum_path(format: "xls") %>
 <% if @sum.to_f > 0 %>
 <table class="table table-striped table-hover">
@@ -15,3 +16,4 @@
   <% end %>
 </table>
 <% end %>
+
