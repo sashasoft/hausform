@@ -56,7 +56,6 @@ class ElementsController < ApplicationController
     @hh = [];
     @sum = 0;
     if params[:archproject].to_f > 0
-      @hh.push({"name" => Element.find_by(label: :archproject).name, "value" => Element.find_by(label: :archproject).price.to_f})
       @sum = @sum.to_f + Element.find_by(label: :archproject).price.to_f
     end
     if params[:plfund].to_f > 0
@@ -170,7 +169,11 @@ class ElementsController < ApplicationController
     if params[:kanalis]
       @sum = @sum.to_f + Element.find_by(label: :kanalis).price.to_f
       @hh.push({"name" => Element.find_by(label: :kanalis).name, "value" => Element.find_by(label: :kanalis).price.to_f})
-    end
+      end
+      if params[:otoplenie]
+        @sum = @sum.to_f + Element.find_by(label: :otoplenie).price.to_f
+        @hh.push({"name" => Element.find_by(label: :otoplenie).name, "value" => Element.find_by(label: :otoplenie).price.to_f})
+      end
     #dver
     if params[:dver]
       @sum = @sum.to_f + Element.find_by(label: :dver).price.to_f
