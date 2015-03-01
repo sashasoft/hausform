@@ -101,26 +101,26 @@ class ElementsController < ApplicationController
     end
     #vnutren peregorodki
     if params[:plvnper].to_f > 0
-    if params[:sip120]
-    @sum = @sum.to_f + Element.find_by(label: :sip120).price.to_f * params[:plvnper].to_f
-    #@hh.push({"name" => Element.find_by(label: :sip120).name, "value" => Element.find_by(label: :sip120).price.to_f * params[:plvnper].to_f})
-    end
-    if params[:karkas90]
-    @sum = @sum.to_f + Element.find_by(label: :karkas90).price.to_f * params[:plvnper].to_f
-    #@hh.push({"name" => Element.find_by(label: :karkas90).name, "value" => Element.find_by(label: :karkas90).price.to_f * params[:plvnper].to_f})
-    end
-    if params[:vagonka]
-    @sum = @sum.to_f + Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f * 2
-    #@hh.push({"name" => Element.find_by(label: :vagonka).name.to_s+"перегородка", "value" => Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f*2 })
-    end
-    if params[:gips]
-    @sum = @sum.to_f + Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f * 2
-    #@hh.push({"name" => Element.find_by(label: :gips).name, "value" => Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f * 2})
-    end
-    if params[:utiplenie100]
-    @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f
-    #@hh.push({"name" => Element.find_by(label: :utiplenie100).name, "value" => Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f})
-    end
+      if params[:sip120]
+      @sum = @sum.to_f + Element.find_by(label: :sip120).price.to_f * params[:plvnper].to_f
+      #@hh.push({"name" => Element.find_by(label: :sip120).name, "value" => Element.find_by(label: :sip120).price.to_f * params[:plvnper].to_f})
+      end
+      if params[:karkas90]
+      @sum = @sum.to_f + Element.find_by(label: :karkas90).price.to_f * params[:plvnper].to_f
+      #@hh.push({"name" => Element.find_by(label: :karkas90).name, "value" => Element.find_by(label: :karkas90).price.to_f * params[:plvnper].to_f})
+      end
+      if params[:vagonkaperegorodka]
+      @sum = @sum.to_f + Element.find_by(label: :vagonkaperegorodka).price.to_f * params[:plvnper].to_f * 2
+      #@hh.push({"name" => Element.find_by(label: :vagonka).name.to_s+"перегородка", "value" => Element.find_by(label: :vagonka).price.to_f * params[:plvnper].to_f*2 })
+      end
+      if params[:gipsperegorodka]
+      @sum = @sum.to_f + Element.find_by(label: :gipsperegorodka).price.to_f * params[:plvnper].to_f * 2
+      #@hh.push({"name" => Element.find_by(label: :gips).name, "value" => Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f * 2})
+      end
+      if params[:utiplenie100]
+      @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f
+      #@hh.push({"name" => Element.find_by(label: :utiplenie100).name, "value" => Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f})
+      end
     end
     #potolok
     if params[:plpot].to_f > 0
