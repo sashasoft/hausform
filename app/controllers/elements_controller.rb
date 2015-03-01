@@ -195,14 +195,6 @@ class ElementsController < ApplicationController
       end
       
       
-      if @sum.to_f >= Element.find_by(label: :sum2).price.to_f
-        @sum = @sum.to_f * Element.find_by(label: :nacenka14).price.to_f
-      end
-      if @sum.to_f >= Element.find_by(label: :sum1).price.to_f
-        @sum = @sum.to_f * Element.find_by(label: :nacenka15).price.to_f
-      else
-        @sum = @sum.to_f * Element.find_by(label: :pribyl).price.to_f
-      end
       
       
       
