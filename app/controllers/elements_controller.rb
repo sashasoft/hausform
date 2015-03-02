@@ -113,7 +113,7 @@ class ElementsController < ApplicationController
       end
       if params[:gipsperegorodka]
         @sum = @sum.to_f + Element.find_by(label: :gipsperegorodka).price.to_f * params[:plvnper].to_f * 2
-        @hh.push({"name" => Element.find_by(label: :gips).name, "value" => Element.find_by(label: :gips).price.to_f * params[:plvnper].to_f * 2})
+        @hh.push({"name" => Element.find_by(label: :gipsperegorodka).name, "value" => Element.find_by(label: :gipsperegorodka).price.to_f * params[:plvnper].to_f * 2})
       end
       if params[:utiplenie100]
         @sum = @sum.to_f + Element.find_by(label: :utiplenie100).price.to_f * params[:plvnper].to_f
@@ -203,7 +203,6 @@ class ElementsController < ApplicationController
       else
         @sum = @sum.to_f * Element.find_by(label: :pribyl).price.to_f
       end
-      
       
       
     end

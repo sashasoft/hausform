@@ -1,0 +1,40 @@
+<h1>Все составляющие строительства проекта "Смерекова хата"</h1>
+ <%= link_to "Excel", baums_path(format: "xls") %>
+<table class="table table-striped table-hover">
+  <tr>
+    <th><strong>Название</strong></th>
+    <th>Цена за м<sup>2</sup> или %</th>
+    <th>Метка</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @baums.each do |baum| %>
+    <tr>
+      <td><%= baum.name %></td>
+      <td><%= baum.price %> </td>
+      <td><%= baum.label %> </td>
+      <% if can? :read, Baum %>
+       <td><%= link_to 'Подробно..', baum, class: "btn btn-xs btn-info" %></td> 
+      <% end %>
+      <% if can? :update, Baum %>
+         <td><%= link_to 'Редактировать', edit_baum_path(baum), class: "btn btn-xs btn-warning" %></td>
+      <% end %>
+      <% if can? :destroy, Baum %>
+         <td><%= link_to 'Удалить!', element_path(baum), class: "btn btn-xs btn-danger", 
+            method: :delete,
+            data: { confirm: 'Вы уверены?' } %></td> 
+      <% end %>
+    
+          
+     
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Добавить новый елемент проекта', new_baum_path, class: "btn btn-sm btn-success" %>
+<%= link_to 'Перейти к форме', baums_form_path, class: "btn btn-xs btn-primary" %>
+<br>
+<br>
+<br>

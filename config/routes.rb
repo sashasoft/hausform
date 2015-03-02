@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
   get 'components/index'
-
   get "elements/form"
   get "elements/sum"
   resources :elements
+  
+  get "baums/form"
+  get "baums/sum"
+  resources :baums
   root 'welcome#index'
   
   devise_for :users

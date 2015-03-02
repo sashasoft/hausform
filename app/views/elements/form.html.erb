@@ -1,5 +1,5 @@
 
-<h1 class="h1_form">Форма подсчета стоимости проекта</h1><br><br>
+<h1 class="h1_form">"ЕвроХауз"</h1><br><br>
 
 <%= form_tag("sum", method: :get, class: "form-horizontal", role: "form") do %>
   Архитектурный проект <%= check_box_tag 'archproject' %><br><br>
@@ -52,6 +52,7 @@
   
   
   <%= submit_tag "Подсчитать стоимость", class: "btn btn-xs btn-info" %>
+  <%= link_to 'Очистить форму', elements_form_path, class: "btn btn-xs btn-warning" %><br><br>
     <% if can? :update, Element %>
       <%= link_to 'Перейти в раздел редактирования', elements_path, class: "btn btn-xs btn-info" %>
     <% end %>

@@ -1,0 +1,19 @@
+<h2>Новый елемент проекта</h2>
+<%= form_for @baum do |f| %>
+ 
+  <p>
+    Название:<%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    Цена:<%= f.text_field :price %>
+  </p>
+  
+  <p>
+    Метка:<%= f.text_field :label %>
+  </p> 
+  
+  <p>
+    <%= submit_tag "Создать" %>
+  </p>
+<% end %>

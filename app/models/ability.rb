@@ -10,6 +10,8 @@ class Ability
       else
         can :form, Element
         can :sum, Element
+        can :form, Baum
+        can :sum, Baum
       end
     #
     # The first argument to `can` is the action you are giving the user

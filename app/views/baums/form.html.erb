@@ -1,0 +1,50 @@
+
+<h1 class="h1_form">"СМЕРЕКОВА ХАТА"</h1><br>
+
+<%= form_tag("sum", method: :get, class: "form-horizontal", role: "form") do %>
+  <span class="caption">Фундамент</span><br>
+  Площадь <%= number_field_tag 'plfund' %> м<sup>2</sup><br><br>
+  
+  <span class="caption">Стены</span><br>
+  Площадь <%= number_field_tag 'plsten' %> м<sup>2</sup><br><br>
+  
+  <span class="caption">Тип стен</span><br>
+  Дикий сруб <%= check_box_tag 'dikii' %><br>
+  Диаметр: 200 <%= check_box_tag 'dikii200' %>, 240 <%= check_box_tag 'dikii240' %>,
+           260 <%= check_box_tag 'dikii260' %>, 300 <%= check_box_tag 'dikii300' %><br><br>
+  
+  Оцилиндровка <%= check_box_tag 'cylindr' %><br>
+  Диаметр: 200 <%= check_box_tag 'cylindr200' %>, 240 <%= check_box_tag 'cylindr240' %>,
+           260 <%= check_box_tag 'cylindr260' %>, 300 <%= check_box_tag 'cylindr300' %><br><br>
+  
+  
+  Профилированный <%= check_box_tag 'profil' %><br>
+  Толщина: 150 <%= check_box_tag 'profil150' %>, 180 <%= check_box_tag 'profil180' %>,
+           200 <%= check_box_tag 'profil200' %><br><br>
+           
+  <span class="caption">Покраска</span> <%= check_box_tag 'pokraska' %><br><br>
+  
+  <span class="caption">Потолки</span><br>
+  Площадь <%= number_field_tag 'plpot' %> м<sup>2</sup><br>
+  Отделка потолка: Вагонка <%= check_box_tag 'vagonka' %><br><br>
+  
+  <span class="caption">Перекрытие</span><br>
+  Площадь <%= number_field_tag 'plper' %> м<sup>2</sup><br>
+  Отделка: Доска(сосна) <%= check_box_tag 'doskasosna' %><br>
+  Утепление <%= check_box_tag 'utiplenieper' %><br><br>
+  
+  <span class="caption">Кровля</span><br>
+  Площадь <%= number_field_tag 'plkrov' %> м<sup>2</sup><br>
+  Тип кровли: Битумная <%= check_box_tag 'bitumkrov' %>, Металлочерепица <%= check_box_tag 'metkrov' %><br>
+  Утепление <%= check_box_tag 'utipleniekrov' %><br><br>
+    
+  
+  <%= submit_tag "Подсчитать стоимость", class: "btn btn-xs btn-info" %>
+  <%= link_to 'Очистить форму', baums_form_path, class: "btn btn-xs btn-warning" %><br><br>
+    <% if can? :update, Baum %>
+      <%= link_to 'Перейти в раздел редактирования', baums_path, class: "btn btn-xs btn-info" %>
+    <% end %>
+<% end %>
+<br>
+<br>
+<br>

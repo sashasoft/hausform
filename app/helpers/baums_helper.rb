@@ -1,0 +1,2 @@
+module BaumsHelper
+end
