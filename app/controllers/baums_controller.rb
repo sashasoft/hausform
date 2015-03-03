@@ -58,7 +58,9 @@ class BaumsController < ApplicationController
     @hh = [];
     @sum = 0;
     
+    if params[:archproject].to_f > 0
       @sum = @sum.to_f + Baum.find_by(label: :archproject).price.to_f
+    end
 
     if params[:plfund].to_f > 0
       @sum = @sum.to_f + Baum.find_by(label: :plfund).price.to_f * params[:plfund].to_f;
