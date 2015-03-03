@@ -159,8 +159,8 @@ class BaumsController < ApplicationController
     
     #krovlia
     if params[:plkrov].to_f > 0
-      @sum = @sum.to_f + Baum.find_by(label: :plkrov).price.to_f * params[:plkrov].to_f
-      @hh.push({"name" => Baum.find_by(label: :plkrov).name, "value" => Baum.find_by(label: :plkrov).price.to_f * params[:plkrov].to_f})
+      @sum = @sum.to_f + Baum.find_by(label: :stropsistema).price.to_f * params[:plkrov].to_f
+      @hh.push({"name" => Baum.find_by(label: :stropsistema).name, "value" => Baum.find_by(label: :plkrov).price.to_f * params[:plkrov].to_f})
       if params[:bitumkrov]
         @sum = @sum.to_f + Baum.find_by(label: :bitumkrov).price.to_f * params[:plkrov].to_f
         @hh.push({"name" => Baum.find_by(label: :bitumkrov).name, "value" => Baum.find_by(label: :bitumkrov).price.to_f * params[:plkrov].to_f})
@@ -181,7 +181,10 @@ class BaumsController < ApplicationController
       @sum = @sum.to_f + Baum.find_by(label: :marketing).price.to_f
       @sum = @sum.to_f + Baum.find_by(label: :logistika).price.to_f
       if params[:akcionka]
-        @sum = @sum.to_f + Baum.find_by(label: :akcionka).price.to_f
+        @sum = @sum.to_f + Element.find_by(label: :akcionka).price.to_f
+      end
+      if params[:regional]
+        @sum = @sum.to_f + Element.find_by(label: :regional).price.to_f
       end
            
       

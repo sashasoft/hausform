@@ -2,6 +2,7 @@
 <h1 class="h1_form">"СМЕРЕКОВА ХАТА"</h1><br>
 
 <%= form_tag("sum", method: :get, class: "form-horizontal", role: "form") do %>
+  Архитектурный проект <%= check_box_tag 'archproject' %><br><br>
   <span class="caption">Фундамент</span><br>
   Площадь <%= number_field_tag 'plfund' %> м<sup>2</sup><br><br>
   
@@ -37,6 +38,9 @@
   Площадь <%= number_field_tag 'plkrov' %> м<sup>2</sup><br>
   Тип кровли: Битумная <%= check_box_tag 'bitumkrov' %>, Металлочерепица <%= check_box_tag 'metkrov' %><br>
   Утепление <%= check_box_tag 'utipleniekrov' %><br><br>
+  
+  <span class="caption">Акционная наценка</span> <%= check_box_tag 'akcionka' %><br>
+  <span class="caption">Региональный проект</span> <%= check_box_tag 'regional' %><br><br>
     
   
   <%= submit_tag "Подсчитать стоимость", class: "btn btn-xs btn-info" %>
