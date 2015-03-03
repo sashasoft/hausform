@@ -162,7 +162,7 @@ class BaumsController < ApplicationController
     #krovlia
     if params[:plkrov].to_f > 0
       @sum = @sum.to_f + Baum.find_by(label: :stropsistema).price.to_f * params[:plkrov].to_f
-      @hh.push({"name" => Baum.find_by(label: :stropsistema).name, "value" => Baum.find_by(label: :plkrov).price.to_f * params[:plkrov].to_f})
+      @hh.push({"name" => Baum.find_by(label: :stropsistema).name, "value" => Baum.find_by(label: :stropsistema).price.to_f * params[:plkrov].to_f})
       if params[:bitumkrov]
         @sum = @sum.to_f + Baum.find_by(label: :bitumkrov).price.to_f * params[:plkrov].to_f
         @hh.push({"name" => Baum.find_by(label: :bitumkrov).name, "value" => Baum.find_by(label: :bitumkrov).price.to_f * params[:plkrov].to_f})
