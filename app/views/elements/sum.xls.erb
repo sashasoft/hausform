@@ -10,12 +10,13 @@
         <Cell><Data ss:Type="String">Название</Data></Cell>
         <Cell><Data ss:Type="String">Цена</Data></Cell>
       </Row>
-    <% @hh.each do |h| %>
+    <%= @ht.each do |h| %>
       <Row>
-        <Cell><Data ss:Type="String"><%= h["name"] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= h["name"]  %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= h["value"] %></Data></Cell>
       </Row>
     <% end %>
     </Table>
   </Worksheet>
 </Workbook>
+

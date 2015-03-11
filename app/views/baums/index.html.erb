@@ -4,7 +4,6 @@
   <tr>
     <th><strong>Название</strong></th>
     <th>Цена за м<sup>2</sup> или %</th>
-    <th>Метка</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
     <tr>
       <td><%= baum.name %></td>
       <td><%= baum.price %> </td>
-      <td><%= baum.label %> </td>
       <% if can? :read, Baum %>
        <td><%= link_to 'Подробно..', baum, class: "btn btn-xs btn-info" %></td> 
       <% end %>
