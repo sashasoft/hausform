@@ -52,9 +52,7 @@ class BaumsController < ApplicationController
   #####################################################
   def sum
   
-  
-  
-  
+    temp = Baum.new
     @hh = [];
     @sum = 0;
     
@@ -64,7 +62,8 @@ class BaumsController < ApplicationController
 
     if params[:plfund].to_f > 0
       @sum = @sum.to_f + Baum.find_by(label: :plfund).price.to_f * params[:plfund].to_f;
-      @hh.push({"name" => Baum.find_by(label: :plfund).name.to_s, "value" => params[:plfund]})
+      temp = Baum.find_by(label: :plfund)
+      @hh.push({"name" => temp.name.to_s, "value" => temp.price.to_f * params[:plfund].to_f})
     end
     
     
