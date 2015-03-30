@@ -7,7 +7,7 @@ class Ability
        user ||= User.new
       if user.has_role? :admin
         can :manage, :all
-      else
+      elsif user.has_role? :user
         can :form, Element
         can :sum, Element
         can :form, Baum
