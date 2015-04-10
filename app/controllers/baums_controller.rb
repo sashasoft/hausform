@@ -57,13 +57,13 @@ class BaumsController < ApplicationController
     @sum = 0;
     
     if params[:archproject].to_f > 0
-      @sum = @sum.to_f + Baum.find_by(label: :archproject).price.to_f
+      @sum = @sum + Baum.find_by(label: :archproject).price
     end
 
     if params[:plfund].to_f > 0
-      @sum = @sum.to_f + Baum.find_by(label: :plfund).price.to_f * params[:plfund].to_f;
+      @sum = @sum + Baum.find_by(label: :plfund).price * params[:plfund].to_f;
       temp = Baum.find_by(label: :plfund)
-      @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plfund].to_f})
+      @hh.push({"name" => temp.name, "value" => temp.price * params[:plfund].to_f})
     end
     
     
@@ -72,64 +72,64 @@ class BaumsController < ApplicationController
       if params[:dikii]
         if params[:dikii200]
           temp = Baum.find_by(label: :dikii200)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:dikii240]
           temp = Baum.find_by(label: :dikii240)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:dikii260]
           temp = Baum.find_by(label: :dikii260)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:dikii300]
           temp = Baum.find_by(label: :dikii300)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
       end
       
       if params[:cylindr]
         if params[:cylindr200]
           temp = Baum.find_by(label: :cylindr200)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:cylindr240]
           temp = Baum.find_by(label: :cylindr240)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:cylindr260]
           temp = Baum.find_by(label: :cylindr260)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:cylindr300]
           temp = Baum.find_by(label: :cylindr300)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
       end
        
       if params[:profil]
         if params[:profil150]
           temp = Baum.find_by(label: :profil150)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:profil180]
           temp = Baum.find_by(label: :profil180)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
         if params[:profil200]
           temp = Baum.find_by(label: :profil200)
-          @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-          @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
       end
     end
@@ -137,8 +137,8 @@ class BaumsController < ApplicationController
     #pokraska
     if params[:pokraska]
       temp = Baum.find_by(label: :pokraska)
-      @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-      @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plsten].to_f})
+      @sum = @sum + temp.price * params[:plsten].to_f
+      @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
     end
     
        
@@ -148,8 +148,8 @@ class BaumsController < ApplicationController
     if params[:plpot].to_f > 0
       if params[:vagonka]
       temp = Baum.find_by(label: :vagonka)
-      @sum = @sum.to_f + temp.price.to_f * params[:plsten].to_f
-      @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plpot].to_f})
+      @sum = @sum + temp.price * params[:plsten].to_f
+      @hh.push({"name" => temp.name, "value" => temp.price * params[:plpot].to_f})
       end
     end
     
@@ -157,19 +157,19 @@ class BaumsController < ApplicationController
     #perekrytie
     if params[:plper].to_f > 0
       temp = Baum.find_by(label: :plper)
-      @sum = @sum.to_f + temp.price.to_f * params[:plper].to_f
-      @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plper].to_f})
+      @sum = @sum + temp.price * params[:plper].to_f
+      @hh.push({"name" => temp.name, "value" => temp.price * params[:plper].to_f})
       
       if params[:doskasosna]
         temp = Baum.find_by(label: :doskasosna)
-        @sum = @sum.to_f + temp.price.to_f * params[:plper].to_f
-        @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plper].to_f})
+        @sum = @sum + temp.price * params[:plper].to_f
+        @hh.push({"name" => temp.name, "value" => temp.price * params[:plper].to_f})
       end
       
       if params[:utiplenieper]
         temp = Baum.find_by(label: :utiplenieper)
-        @sum = @sum.to_f + temp.price.to_f * params[:plper].to_f
-        @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plper].to_f})
+        @sum = @sum + temp.price * params[:plper].to_f
+        @hh.push({"name" => temp.name, "value" => temp.price * params[:plper].to_f})
       end
     end
     
@@ -177,45 +177,45 @@ class BaumsController < ApplicationController
     #krovlia
     if params[:plkrov].to_f > 0
       temp = Baum.find_by(label: :stropsistema)
-      @sum = @sum.to_f + temp.price.to_f * params[:plkrov].to_f
-      @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plkrov].to_f})
+      @sum = @sum + temp.price * params[:plkrov].to_f
+      @hh.push({"name" => temp.name, "value" => temp.price * params[:plkrov].to_f})
       
       if params[:bitumkrov]
         temp = Baum.find_by(label: :bitumkrov)
-        @sum = @sum.to_f + temp.price.to_f * params[:plkrov].to_f
-        @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plkrov].to_f})
+        @sum = @sum + temp.price * params[:plkrov].to_f
+        @hh.push({"name" => temp.name, "value" => temp.price * params[:plkrov].to_f})
       end
       if params[:metkrov]
         temp = Baum.find_by(label: :metkrov)
-        @sum = @sum.to_f + temp.price.to_f * params[:plkrov].to_f
-        @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plkrov].to_f})
+        @sum = @sum + temp.price * params[:plkrov].to_f
+        @hh.push({"name" => temp.name, "value" => temp.price * params[:plkrov].to_f})
       end
       if params[:utipleniekrov]
         temp = Baum.find_by(label: :utipleniekrov)
-        @sum = @sum.to_f + temp.price.to_f * params[:plkrov].to_f
-        @hh.push({"name" => temp.name, "value" => temp.price.to_f * params[:plkrov].to_f})
+        @sum = @sum + temp.price * params[:plkrov].to_f
+        @hh.push({"name" => temp.name, "value" => temp.price * params[:plkrov].to_f})
       end
     end
     
     
     #marketing
-    if !(@sum.to_f == 0)
-      @sum = @sum.to_f + Baum.find_by(label: :marketing).price.to_f
-      @sum = @sum.to_f + Baum.find_by(label: :logistika).price.to_f
+    if !(@sum == 0)
+      @sum = @sum + Baum.find_by(label: :marketing).price
+      @sum = @sum + Baum.find_by(label: :logistika).price
       if params[:akcionka]
-        @sum = @sum.to_f + Element.find_by(label: :akcionka).price.to_f
+        @sum = @sum + Element.find_by(label: :akcionka).price
       end
       if params[:regional]
-        @sum = @sum.to_f + Element.find_by(label: :regional).price.to_f
+        @sum = @sum + Element.find_by(label: :regional).price
       end
            
       
-      if @sum.to_f >= Baum.find_by(label: :sum2).price.to_f
-        @sum = @sum.to_f * Baum.find_by(label: :nacenka14).price.to_f
-      elsif @sum.to_f >= Baum.find_by(label: :sum1).price.to_f
-        @sum = @sum.to_f * Baum.find_by(label: :nacenka15).price.to_f
+      if @sum >= Baum.find_by(label: :sum2).price
+        @sum = @sum * Baum.find_by(label: :nacenka14).price
+      elsif @sum >= Baum.find_by(label: :sum1).price
+        @sum = @sum * Baum.find_by(label: :nacenka15).price
       else
-        @sum = @sum.to_f * Baum.find_by(label: :pribyl).price.to_f
+        @sum = @sum * Baum.find_by(label: :pribyl).price
       end
       
       
