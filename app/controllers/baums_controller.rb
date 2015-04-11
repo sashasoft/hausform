@@ -203,10 +203,10 @@ class BaumsController < ApplicationController
       @sum = @sum + Baum.find_by(label: :marketing).price
       @sum = @sum + Baum.find_by(label: :logistika).price
       if params[:akcionka]
-        @sum = @sum + Element.find_by(label: :akcionka).price
+        @sum = @sum + Baum.find_by(label: :akcionka).price
       end
       if params[:regional]
-        @sum = @sum + Element.find_by(label: :regional).price
+        @sum = @sum + Baum.find_by(label: :regional).price
       end
            
       
