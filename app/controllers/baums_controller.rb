@@ -90,6 +90,11 @@ class BaumsController < ApplicationController
           @sum = @sum + temp.price * params[:plsten].to_f
           @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
+        if params[:dikii400]
+          temp = Baum.find_by(label: :dikii400)
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
+        end
       end
       
       if params[:cylindr]
@@ -128,6 +133,29 @@ class BaumsController < ApplicationController
         end
         if params[:profil200]
           temp = Baum.find_by(label: :profil200)
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
+        end
+      end
+      
+      if params[:profilklei]
+        if params[:profil150klei]
+          temp = Baum.find_by(label: :profil150klei)
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
+        end
+        if params[:profil180klei]
+          temp = Baum.find_by(label: :profil180klei)
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
+        end
+        if params[:profil200klei]
+          temp = Baum.find_by(label: :profil200klei)
+          @sum = @sum + temp.price * params[:plsten].to_f
+          @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
+        end
+        if params[:profil300klei]
+          temp = Baum.find_by(label: :profil300klei)
           @sum = @sum + temp.price * params[:plsten].to_f
           @hh.push({"name" => temp.name, "value" => temp.price * params[:plsten].to_f})
         end
