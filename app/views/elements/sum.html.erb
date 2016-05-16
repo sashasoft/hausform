@@ -1,17 +1,19 @@
 <br>Стоимость проекта: <%= @sum %> грн. <br>
 
-<% if @hh.length > 0 %>
-<h1>Выходные данные проекта</h1>
-<table class="table table-striped table-hover">
-  <tr>
-    <th><strong>Название</strong></th>
-    <th><strong>Стоимость (грн)</strong></th>
-  </tr>
-  <% @hh.each do |h| %>
+<div id="result">
+  <% if @hh.length > 0 %>
+  <h1>Выходные данные проекта</h1>
+  <table class="table table-striped table-hover">
     <tr>
-      <td><%= h["name"] %></td>
-      <td><%= h["value"] %></td>
+      <th><strong>Название</strong></th>
+      <th><strong>Стоимость (грн)</strong></th>
     </tr>
+    <% @hh.each do |h| %>
+      <tr>
+        <td><%= h["name"] %></td>
+        <td><%= h["value"] %></td>
+      </tr>
+    <% end %>
+  </table><br>
   <% end %>
-</table><br>
-<% end %>
+</div>
